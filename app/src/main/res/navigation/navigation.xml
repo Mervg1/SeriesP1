@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/initFragment">
+    <fragment
+        android:id="@+id/initFragment"
+        android:name="edu.itesm.series.InitFragment"
+        android:label="fragment_init"
+        tools:layout="@layout/fragment_init" >
+        <action
+            android:id="@+id/action_initFragment_to_seriessFragment2"
+            app:destination="@id/seriessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/seriessFragment"
+        android:name="edu.itesm.series.SeriessFragment"
+        android:label="fragment_seriess"
+        tools:layout="@layout/fragment_seriess" >
+        <action
+            android:id="@+id/action_seriessFragment_to_serieFragment"
+            app:destination="@id/serieFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/serieFragment"
+        android:name="edu.itesm.series.SerieFragment"
+        android:label="fragment_serie"
+        tools:layout="@layout/fragment_serie" >
+        <argument
+            android:name="serie"
+            app:argType="edu.itesm.series.Series" />
+    </fragment>
+</navigation>
